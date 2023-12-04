@@ -1,19 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thashimo <thashimo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/20 19:26:19 by thashimo          #+#    #+#             */
+/*   Updated: 2023/11/20 19:26:44 by thashimo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-
+# include <unistd.h>
+# include <stdlib.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
-
-#include <unistd.h>
-#include <stdlib.h>
-
-typedef struct buffstr
-{
-	char	*b;
-	int		ret;
-	int		read;
-}buffstr;
 
 char	*read_buff(int *ret, char *buff, char *str);
 char	*read_line(int fd, int *ret, char *buff, char *str);

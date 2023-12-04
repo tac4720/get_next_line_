@@ -6,12 +6,12 @@
 /*   By: thashimo <thashimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 19:32:00 by thashimo          #+#    #+#             */
-/*   Updated: 2023/11/20 13:59:24 by thashimo         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:54:06 by thashimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-//#define BUFFER_SIZE 2
+//#define BUFFER_SIZE 42
 
 char	*read_buff(int *ret, char *buff, char *str)
 {
@@ -70,6 +70,11 @@ char	*read_nextline(int fd, int *ret, char *buff, char *str)
 	int	i;
 
 	i = 0;
+	if (*ret == 0)
+	{
+		free(str);
+		return (NULL);
+	}
 	while (0 < *ret)
 	{
 		if (ft_strchr(buff, '\n'))
@@ -107,36 +112,21 @@ char	*get_next_line(int fd)
 
 //#include <stdio.h>
 //#include <fcntl.h>
-
 //int	main(void)
 //{
 //	char *str;
 //	int fd = open("test.txt", O_RDONLY);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
-//	//get_next_line(fd);
 //	printf("%s",get_next_line(fd));
 //	printf("%s",get_next_line(fd));
 //	printf("%s",get_next_line(fd));
 //	printf("%s",get_next_line(fd));
-//	printf("%s",get_next_line(fd));
-//	printf("%s",get_next_line(fd));
-//	printf("%s",get_next_line(fd));
-//	printf("%s",get_next_line(fd));
-//	printf("%s",get_next_line(fd));
-//	printf("%s",get_next_line(fd));
-//	printf("%s",get_next_line(fd));
-//	printf("%s",get_next_line(fd));
+//	//printf("%s",get_next_line(fd));
+//	//printf("%s",get_next_line(fd));
+//	//printf("%s",get_next_line(fd));
+//	//printf("%s",get_next_line(fd));
+//	//printf("%s",get_next_line(fd));
+//	//printf("%s",get_next_line(fd));
+//	//printf("%s",get_next_line(fd));
+//	//printf("%s",get_next_line(fd));
 //	return (0);
 //}
